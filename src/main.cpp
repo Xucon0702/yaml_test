@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
     gYamlTest.showFunctionConfig();
     gYamlTest.Init();
     gYamlTest.showFunctionConfig();
-
+    gYamlTest.writeConfigYaml();
 
     return 0;
 }

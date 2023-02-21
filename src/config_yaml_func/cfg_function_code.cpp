@@ -215,9 +215,15 @@ namespace yamlFunc
             return num;
         }
 
+        //写yaml文件:流文件-->loadfile-->填充数据-->流刷新文件
         void CCfgManagerFunCode::writeConfigYaml()
         {
-            
+            std::ofstream fOut("test.yaml");                    //如果文件不存在会被创建
+            YAML::Node wConfig = YAML::LoadFile("./test.yaml"); //以node形式加载文件,如果是前面load过的config直接用的话是追加写的方式,否则覆盖写
+            wConfig["lib"] = "js";                              //不同的展现形式有对应写法
+            fOut << wConfig;                                    //数据填充流
+            fOut.close(); 
+
             return;
         }       
 
