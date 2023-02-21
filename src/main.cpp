@@ -29,8 +29,8 @@ int getConfigPathFromArgv(int argc, char* argv[])
         s_config_yaml_path = argv[1];
         cout<<"strings:"<<s_config_yaml_path<<endl;
 
-        gYamlTest.configPath = s_config_yaml_path;
-        cout<<"gYamlTest.configPath:"<<gYamlTest.configPath<<endl;
+        gYamlTest.readConfigPath = s_config_yaml_path;
+        cout<<"gYamlTest.readConfigPath:"<<gYamlTest.readConfigPath<<endl;
     }
 
     // //just show test
@@ -60,7 +60,6 @@ int main(int argc, char* argv[])
     gYamlTest.showFunctionConfig();
     gYamlTest.Init();
     gYamlTest.showFunctionConfig();
-
 
 
     return 0;

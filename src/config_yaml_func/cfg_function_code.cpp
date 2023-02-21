@@ -67,8 +67,8 @@ namespace yamlFunc
                 else
                 {
                     std::cout << "mvYamlPath = " << mvYamlPath << " is not exit !!"<<"\n";
-                    //当环境变量没有设置时也可以通过设置configPath来配置
-                    mvYamlPath = configPath;
+                    //当环境变量没有设置时也可以通过设置readConfigPath来配置
+                    mvYamlPath = readConfigPath;
                     if (IsFileExistsAccess(mvYamlPath))
                     {
                         YAML::Node config;
@@ -85,7 +85,7 @@ namespace yamlFunc
                     }
                     else
                     {
-                        std::cout << "mvYamlPath = configPath =  " << mvYamlPath << " is not exit !!"<<"\n";
+                        std::cout << "mvYamlPath = readConfigPath =  " << mvYamlPath << " is not exit !!"<<"\n";
                     }
                 }
             }
@@ -162,7 +162,7 @@ namespace yamlFunc
             std::cout<<"mySkills.java:"<<m_FunctionConfig.mySkills.java<<std::endl;
             std::cout<<"mySkills.android:"<<m_FunctionConfig.mySkills.android<<std::endl;
             std::cout<<"mySkills.python:"<<m_FunctionConfig.mySkills.python<<std::endl;
-            std::cout<<"configPath:"<<configPath<<std::endl;
+            std::cout<<"readConfigPath:"<<readConfigPath<<std::endl;
             std::cout<<"\n";
 
             return;
@@ -214,6 +214,13 @@ namespace yamlFunc
             iss >> num;
             return num;
         }
+
+        void CCfgManagerFunCode::writeConfigYaml()
+        {
+            
+            return;
+        }       
+
 
     } // namespace state
 } // namespace motovis

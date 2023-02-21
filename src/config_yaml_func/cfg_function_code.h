@@ -36,11 +36,11 @@ namespace yamlFunc
         public:
             bool Init();
             void GetFunctionCode(FunctionConfig &obj);
-            void showFunctionConfig();            
-        
+            void showFunctionConfig();  
+            void writeConfigYaml();          
         public:
-            std::string configPath;
-
+            std::string readConfigPath;
+            std::string writeConfigPath;
         private:
             bool YamlInit();
             bool IsFileExistsAccess(std::string path = "");
