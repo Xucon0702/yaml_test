@@ -70,6 +70,6 @@ int main(int argc, char* argv[])
     gVehicleYaml.showVehicleConfig();
     gVehicleYaml.Init();
     gVehicleYaml.showVehicleConfig();
-
+    gVehicleYaml.checkCfg();
     return 0;
 }

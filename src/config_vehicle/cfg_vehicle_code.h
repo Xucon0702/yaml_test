@@ -12,6 +12,9 @@
 
 using namespace std;
 
+#define MD5RESULT "S58_ss_656546531"
+#define VERSION   "A58_2023_02_27_0_0_1"
+
 namespace motovis
 {
     namespace yamlVehicle
@@ -148,7 +151,7 @@ namespace motovis
             void GetVehicleCode(VehicleConfig &obj);
             void showVehicleConfig();  
             void writeConfigYaml(); 
-            void checkVehicleCfg();         
+            bool checkCfg();         
         public:
             std::string readConfigPath = "../config/vehicle.yaml";
             std::string writeConfigPath;
@@ -171,10 +174,12 @@ namespace motovis
             uint32_t EPSSteeringAngleRatiosClos ;
             vector<vector<float>> EPSSteeringAngleRatio;//方向盘转角标定值
             //避障参数
+            uint32_t SteeringAngleMinDisLsitNum;
+            uint32_t SteeringAngleMinDisLsitClos;
             vector<vector<int>> SteeringAngleMinDis;
         };
         
-        
+
 
     } // namespace yamlTest
 } // namespace yamlFunc

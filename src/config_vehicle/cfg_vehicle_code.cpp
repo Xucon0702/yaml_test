@@ -142,54 +142,38 @@ namespace motovis
 
         bool CCfgVehicleCode::PasingYamlArray(const YAML::Node &tNode)
         {
-            int subscript = 0;
-            string memberName = "EPSSteeringAngleRatio_";
-            vector<float> ext;
-            ext.clear();
-            ext.resize(0);
+            //ratios
+            string rariosMemberName = "EPSSteeringAngleRatio_";
+            vector<float> ratiosExt;
+            ratiosExt.clear();
+            ratiosExt.resize(0);
+            //disList
+            string disListMemberName = "SteeringAngleMinDis_";
+            vector<int> disListExt;
+            disListExt.clear();
+            disListExt.resize(0);
 
-            std::cout<<"PasingYamlArray start:"<<"EPSSteeringAngleRatiosRows="<<EPSSteeringAngleRatiosRows<<std::endl;
+            //解析EPSSteeringAngleRatio
+            std::cout<<"Pasing EPSSteeringAngleRatio start:"<<"EPSSteeringAngleRatiosRows="<<EPSSteeringAngleRatiosRows<<std::endl;
             for(int i= 0;i<EPSSteeringAngleRatiosRows;i++)
             {
-                memberName = "EPSSteeringAngleRatio_";
-                memberName += std::to_string(i);
-                std::cout<<"memberName:"<<memberName<<std::endl;   
-                ext= tNode["EPSSteeringAngleRatios"][memberName].as<vector<float>>();
+                rariosMemberName = "EPSSteeringAngleRatio_";
+                rariosMemberName += std::to_string(i);
+                std::cout<<"rariosMemberName:"<<rariosMemberName<<std::endl;   
+                ratiosExt= tNode["EPSSteeringAngleRatios"][rariosMemberName].as<vector<float>>();
                 if(EPSSteeringAngleRatiosRows != 0)
                 {
-                    // assert((int)ext.size() == EPSSteeringAngleRatiosClos);
+                    assert((int)ratiosExt.size() == EPSSteeringAngleRatiosClos);
                 } 
-                EPSSteeringAngleRatio.push_back(ext);   
+                EPSSteeringAngleRatio.push_back(ratiosExt);   
 
-                std::cout <<"ext:start:ext.size()="<<ext.size()<<std::endl;
+                std::cout <<"ratiosExt:start:ratiosExt.size()="<<ratiosExt.size()<<std::endl;
             
-                for (int i = 0; i < ext.size(); i++) { 
-                    std::cout << ext[i] << " ";
+                for (int i = 0; i < ratiosExt.size(); i++) { 
+                    std::cout << ratiosExt[i] << " ";
                 }            
-                std::cout <<"\next:end"<< std::endl;
+                std::cout <<"\nratiosExt:end"<< std::endl;
             }
-
-            // //解析EPSSteeringAngleRatio
-            // // vector<vector<float>> ext= tNode["EPSSteeringAngleRatios"].as<vector<vector<float>>>();
-            // vector<float> ext= tNode["EPSSteeringAngleRatios"]["EPSSteeringAngleRatio[0]"].as<vector<float>>();
-            // std::cout<<"here 111"<<std::endl;
-            
-            // if(EPSSteeringAngleRatiosRows != 0)
-            // {
-            //     assert((int)ext.size() == EPSSteeringAngleRatiosClos);
-            // }
-            // std::cout<<"here 222"<<std::endl;
-
-            // // EPSSteeringAngleRatio = ext;
-            // EPSSteeringAngleRatio.push_back(ext);
-            // std::cout<<"here 333"<<std::endl;
-
-            // std::cout <<"ext:start:ext.size()="<<ext.size()<<std::endl;
-            
-            // for (int i = 0; i < ext.size(); i++) { 
-            //     std::cout << ext[i] << " ";
-            // }            
-            // std::cout <<"\next:end"<< std::endl;
 
             for (int i = 0; i < EPSSteeringAngleRatio.size(); i++) {       // 行数
             std::cout<<"EPSSteeringAngleRatio:i="<<i<<";EPSSteeringAngleRatio[i].size()="<<EPSSteeringAngleRatio[i].size()<<std::endl;
@@ -199,7 +183,36 @@ namespace motovis
             std::cout << std::endl;
             }
 
-            //解析EPSSteeringAngleRatio
+            //解析SteeringAngleMinDiss
+              std::cout<<"Pasing SteeringAngleMinDiss start:"<<"SteeringAngleMinDisLsitNum="<<SteeringAngleMinDisLsitNum<<";SteeringAngleMinDisLsitClos = "<<SteeringAngleMinDisLsitClos<<std::endl;
+            for(int i= 0;i<SteeringAngleMinDisLsitNum;i++)
+            {
+                disListMemberName = "SteeringAngleMinDis_";
+                disListMemberName += std::to_string(i);
+                std::cout<<"disListMemberName:"<<disListMemberName<<std::endl;   
+                disListExt= tNode["SteeringAngleMinDiss"][disListMemberName].as<vector<int>>();
+                if(SteeringAngleMinDisLsitClos != 0)
+                {
+                    assert((int)disListExt.size() == SteeringAngleMinDisLsitClos);
+                } 
+                SteeringAngleMinDis.push_back(disListExt);   
+
+                std::cout <<"disListExt:start:disListExt.size()="<<disListExt.size()<<std::endl;
+            
+                for (int i = 0; i < disListExt.size(); i++) { 
+                    std::cout << disListExt[i] << " ";
+                }            
+                std::cout <<"\disListExt:end"<< std::endl;
+            }
+
+            for (int i = 0; i < SteeringAngleMinDis.size(); i++) {       // 行数
+            std::cout<<"SteeringAngleMinDis:i="<<i<<";SteeringAngleMinDis[i].size()="<<SteeringAngleMinDis[i].size()<<std::endl;
+            for (int j = 0; j < SteeringAngleMinDis[i].size(); j++) {  // A[i].size() 第i行的列数
+                std::cout << SteeringAngleMinDis[i][j] << " ";
+            }
+            std::cout << std::endl;
+            }
+
         }
 
 
@@ -277,11 +290,14 @@ namespace motovis
             {
                 EPSSteeringAngleRatiosClos = StringToNum<uint32_t>(val);
             }
-            // else if(key == "EPSSteeringAngleRatio[0]")
-            // {
-            //     EPSSteeringAngleRatiosClos = StringToNum<uint32_t>(val);
-            //     EPSSteeringAngleRatio.
-            // }                 
+            else if(key == "SteeringAngleMinDisLsitNum")
+            {
+                SteeringAngleMinDisLsitNum = StringToNum<uint32_t>(val);
+            }
+            else if(key == "SteeringAngleMinDisLsitClos")
+            {
+                SteeringAngleMinDisLsitClos = StringToNum<uint32_t>(val);
+            }                  
         }
 
         template <class Type>
@@ -305,10 +321,23 @@ namespace motovis
             return;
         }       
 
-        void CCfgVehicleCode::checkVehicleCfg()
+        bool CCfgVehicleCode::checkCfg()
         {
+            bool ret = true;
+            if(version.compare(VERSION) != 0)
+            {
+                cout<<"parse version is not request:"<<version<<";request is :"<<VERSION<<endl;
+                ret = false;
+            }
+            if(md5Result.compare(MD5RESULT) != 0)
+            {
+                cout<<"parse md5Result is not request:"<<md5Result<<";request is :"<<MD5RESULT<<endl;
+                ret = false;
+            }
 
-            return ;
+            if(ret == true)
+            cout<<"checkCfg success"<<endl;
+            return ret;
         }
 
 

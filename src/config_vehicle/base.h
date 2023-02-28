@@ -12,8 +12,6 @@
 
 #ifdef  GAC_A58
 
-#define MD5RESULT "151666165"
-
 #define AHEAD_CTRL_POINT_NUM (1)
 //#define   VisionSlotDelay                               (1)
 
