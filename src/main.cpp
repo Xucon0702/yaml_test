@@ -4,17 +4,20 @@
 #include <cstdlib>
 #include "yaml.h"
 #include "cfg_function_code.h"
+#include "cfg_vehicle_code.h"
 
 using namespace std;
 using namespace YAML;
 using namespace yamlFunc;
 using namespace yamlTest;
+using namespace motovis;
+using namespace yamlVehicle;
 
 char * config_yaml_path = NULL;
 std::string s_config_yaml_path;
 
 static CCfgManagerFunCode gYamlTest;
-
+static CCfgVehicleCode  gVehicleYaml;
 int getConfigPathFromArgv(int argc, char* argv[])
 {
     if(argc<2)
@@ -57,10 +60,16 @@ int main(int argc, char* argv[])
     getConfigPathFromArgv(argc,argv);
     //yamlFunc内从环境变量获取配置路径
     
-    gYamlTest.showFunctionConfig();
-    gYamlTest.Init();
-    gYamlTest.showFunctionConfig();
-    gYamlTest.writeConfigYaml();
+    //默认config配置
+    // gYamlTest.showFunctionConfig();
+    // gYamlTest.Init();
+    // gYamlTest.showFunctionConfig();
+    // gYamlTest.writeConfigYaml();
+
+    //车身参数配置:
+    gVehicleYaml.showVehicleConfig();
+    gVehicleYaml.Init();
+    gVehicleYaml.showVehicleConfig();
 
     return 0;
 }

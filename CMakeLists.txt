@@ -11,6 +11,8 @@ include_directories(
     # # ${PROJECT_SOURCE_DIR}/include/yaml-cpp/node
     ${PROJECT_SOURCE_DIR}/src 
     ${PROJECT_SOURCE_DIR}/src/config_yaml_func/
+    ${PROJECT_SOURCE_DIR}/src/config_vehicle/
+
        
 )
 
@@ -27,6 +29,7 @@ file(GLOB SOURCE_FILES
     ${PROJECT_SOURCE_DIR}/src/*.c 
     ${PROJECT_SOURCE_DIR}/src/*.cpp
     ${PROJECT_SOURCE_DIR}/src/config_yaml_func/*.cpp
+    ${PROJECT_SOURCE_DIR}/src/config_vehicle/*.cpp
  )
 
 # add_subdirectory(yaml_source)  #编译yaml_cpp库时打开
