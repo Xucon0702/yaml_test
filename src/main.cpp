@@ -2,9 +2,12 @@
 #include<iostream>
 #include<cstring>
 #include <cstdlib>
-#include "yaml.h"
+// #include "yaml.h"
 #include "cfg_function_code.h"
-#include "cfg_vehicle_code.h"
+// #include "cfg_vehicle_code.h"
+// #include "base.h"
+
+#include "readCfg.h"
 
 using namespace std;
 using namespace YAML;
@@ -16,8 +19,15 @@ using namespace yamlVehicle;
 char * config_yaml_path = NULL;
 std::string s_config_yaml_path;
 
+extern vector<vector<int16_t> > gSAMinDis;
+extern vector<vector<float> > gSARatio;
+extern VehicleConfig gObj;
+extern CCfgVehicleCode  gVehicleYaml;
+uint32_t gDisLsitNum = 0;
+
 static CCfgManagerFunCode gYamlTest;
-static CCfgVehicleCode  gVehicleYaml;
+
+
 int getConfigPathFromArgv(int argc, char* argv[])
 {
     if(argc<2)
@@ -36,21 +46,6 @@ int getConfigPathFromArgv(int argc, char* argv[])
         cout<<"gYamlTest.readConfigPath:"<<gYamlTest.readConfigPath<<endl;
     }
 
-    // //just show test
-    // YAML::Emitter out;
-    // out << "Hello, World!";
-
-    // std::cout << "Here's the output YAML:\n" << out.c_str(); // prints "Hello, World!"
-
-    // out << YAML::BeginSeq;
-    // out << "eggs";
-    // out << "bread";
-    // out << "milk";
-    // out << YAML::EndSeq;
-
-    // out.SetOutputCharset(YAML::EscapeNonAscii);
-    // out.SetIndent(4);
-
     return 0;
 }
 
@@ -66,10 +61,16 @@ int main(int argc, char* argv[])
     // gYamlTest.showFunctionConfig();
     // gYamlTest.writeConfigYaml();
 
-    //车身参数配置:
-    gVehicleYaml.showVehicleConfig();
-    gVehicleYaml.Init();
-    gVehicleYaml.showVehicleConfig();
-    gVehicleYaml.checkCfg();
+    // //车身参数配置:
+    // gVehicleYaml.showVehicleConfig();
+    // gVehicleYaml.Init();
+    // gVehicleYaml.showVehicleConfig();
+    // gVehicleYaml.checkCfg();
+    // gVehicleYaml.getVehicleConfig(gObj);
+    // gVehicleYaml.getSteeringAngleMinDis(gSAMinDis);
+    // gVehicleYaml.getEPSSteeringAngleRatio(gSARatio);
+
+    getCfgInfo(gSAMinDis,gSARatio,gDisLsitNum,gObj);
+
     return 0;
 }

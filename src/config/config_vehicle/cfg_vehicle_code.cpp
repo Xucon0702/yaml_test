@@ -149,7 +149,7 @@ namespace motovis
             ratiosExt.resize(0);
             //disList
             string disListMemberName = "SteeringAngleMinDis_";
-            vector<int> disListExt;
+            vector<int16_t> disListExt;
             disListExt.clear();
             disListExt.resize(0);
 
@@ -190,7 +190,7 @@ namespace motovis
                 disListMemberName = "SteeringAngleMinDis_";
                 disListMemberName += std::to_string(i);
                 std::cout<<"disListMemberName:"<<disListMemberName<<std::endl;   
-                disListExt= tNode["SteeringAngleMinDiss"][disListMemberName].as<vector<int>>();
+                disListExt= tNode["SteeringAngleMinDiss"][disListMemberName].as<vector<int16_t>>();
                 if(SteeringAngleMinDisLsitClos != 0)
                 {
                     assert((int)disListExt.size() == SteeringAngleMinDisLsitClos);
@@ -213,13 +213,6 @@ namespace motovis
             std::cout << std::endl;
             }
 
-        }
-
-
-        void CCfgVehicleCode::GetVehicleCode(VehicleConfig &obj)
-        {
-            obj = m_VehicleConfig;
-            return;
         }
 
         void CCfgVehicleCode::showVehicleConfig()
@@ -339,6 +332,53 @@ namespace motovis
             cout<<"checkCfg success"<<endl;
             return ret;
         }
+
+        /*数据获取接口*/       
+        void CCfgVehicleCode::getVehicleConfig(VehicleConfig & obj)
+        {
+            // obj = m_VehicleConfig;
+            memcpy(&obj,&m_VehicleConfig,sizeof(VehicleConfig));
+            return ;
+        }
+
+        uint32_t CCfgVehicleCode::getSteeringAngleMinDisLsitNum()
+        {
+            return SteeringAngleMinDisLsitNum;
+        }
+
+        void CCfgVehicleCode::getSteeringAngleMinDis(vector<vector<int16_t> > & vSAMinDis)
+        {
+            vSAMinDis.assign(SteeringAngleMinDis.begin(),SteeringAngleMinDis.end());
+            std::cout <<"vSAMinDis:start:vSAMinDis.size()="<<vSAMinDis.size()<<std::endl;
+            for (int i = 0; i < vSAMinDis.size(); i++) {       // 行数
+            std::cout<<"vSAMinDis:i="<<i<<";vSAMinDis[i].size()="<<vSAMinDis[i].size()<<std::endl;
+            for (int j = 0; j < vSAMinDis[i].size(); j++) {  // A[i].size() 第i行的列数                
+                std::cout << vSAMinDis[i][j] << " ";
+            }
+            std::cout << std::endl;
+            }
+
+            return ;
+        }
+
+        void CCfgVehicleCode::getEPSSteeringAngleRatio( vector<vector<float> > & vSARatio)
+        {
+            vSARatio.assign(EPSSteeringAngleRatio.begin(),EPSSteeringAngleRatio.end());
+            
+            std::cout <<"vSARatio:start:vSARatio.size()="<<vSARatio.size()<<std::endl;
+            for (int i = 0; i < vSARatio.size(); i++) {       // 行数
+            std::cout<<"vSARatio:i="<<i<<";vSARatio[i].size()="<<vSARatio[i].size()<<std::endl;
+            for (int j = 0; j < vSARatio[i].size(); j++) {  // A[i].size() 第i行的列数                
+                std::cout << vSARatio[i][j] << " ";
+            }
+            std::cout << std::endl;
+            }
+
+            return ;            
+        }
+
+
+
 
 
 

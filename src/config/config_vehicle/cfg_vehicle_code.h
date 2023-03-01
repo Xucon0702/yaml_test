@@ -148,10 +148,15 @@ namespace motovis
         {
         public:
             bool Init();
-            void GetVehicleCode(VehicleConfig &obj);
             void showVehicleConfig();  
             void writeConfigYaml(); 
-            bool checkCfg();         
+            bool checkCfg();      
+            // void setCfgVariable(vector<vector<int16_t> > & vSAMinDis,vector<vector<int16_t> > & vSAMinDis,uint32_t disLsitNum,VehicleConfig mVehicleCfg);
+            void getVehicleConfig(VehicleConfig & obj);
+            uint32_t getSteeringAngleMinDisLsitNum();
+            void getSteeringAngleMinDis(vector<vector<int16_t> > & vSAMinDis);
+            void getEPSSteeringAngleRatio( vector<vector<float> > & vSARatio);
+
         public:
             std::string readConfigPath = "../config/vehicle.yaml";
             std::string writeConfigPath;
@@ -172,11 +177,11 @@ namespace motovis
 
             uint32_t EPSSteeringAngleRatiosRows ;
             uint32_t EPSSteeringAngleRatiosClos ;
-            vector<vector<float>> EPSSteeringAngleRatio;//方向盘转角标定值
+            vector<vector<float> > EPSSteeringAngleRatio;//方向盘转角标定值
             //避障参数
             uint32_t SteeringAngleMinDisLsitNum;
             uint32_t SteeringAngleMinDisLsitClos;
-            vector<vector<int>> SteeringAngleMinDis;
+            vector<vector<int16_t> > SteeringAngleMinDis;
         };
         
 
