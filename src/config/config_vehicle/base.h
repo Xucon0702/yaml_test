@@ -11,13 +11,13 @@
 
 #ifdef  GAC_A58
 
-static uint32_t AHEAD_CTRL_POINT_NUM = 1;
+static uint32_t AHEAD_CTRL_POINT_NUM = 1;                      //暂不用
 //static float   VisionSlotDelay                               (1)
 
 static float WIDTH_HALF             = 0.9435;
 static float MIDDLE_TO_REAR         = 0;
 
-static float MIDDLE_TO_REAR_FREESPACE      = 1.349;
+static float MIDDLE_TO_REAR_FREESPACE      = 1.349;//车辆中心到后轴距离
 static float AXIS_DISTANCE                 = 2.730;//轴距
 static float FRONT_USS_TO_FRONT_AXLE_DIST  = 0.956;//前超声到前轴距离
 static float SENSORS_LONGITUDINAL_DIST     = 3.28;//超声安装相关

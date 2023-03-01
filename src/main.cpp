@@ -71,6 +71,7 @@ int main(int argc, char* argv[])
     // gVehicleYaml.getEPSSteeringAngleRatio(gSARatio);
 
     getCfgInfo(gSAMinDis,gSARatio,gDisLsitNum,gObj);
+    showVehCfg(gObj);
 
     return 0;
 }

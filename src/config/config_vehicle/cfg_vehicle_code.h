@@ -44,6 +44,7 @@ namespace motovis
 
             float       front_wheel_span;//FRONT_WHEEL_SPAN
             float       rear_wheel_span;//REAR_WHEEL_SPAN
+
             float       vehicle_len;//VEHICLE_LEN   
             float       vehicle_wid;//VEHICLE_WID
             float       front_edge2center;//FRONT_EDGE2CENTER
@@ -118,6 +119,9 @@ namespace motovis
             float       sensor12_angle;//SENSOR12_ANGLE
             float       cos_sensor12_dis_angel;//COS_SENSOR12_DIS_ANGEL 
 
+            uint32_t    uss_k;//USS_K
+            float       uss_k2;//USS_K2
+            uint32_t    speed_k;//SPEED_K
             uint32_t    plus_count;//PLUS_COUNT
 
         //规划参数
@@ -133,8 +137,10 @@ namespace motovis
             uint32_t    steering_wheel_angle_error;//STEERING_WHEEL_ANGLE_ERROR 目标方向盘转角和实际方向盘转角最大允许差值
             uint32_t    addIdegree;//ADDIDEGREE
 
-            // vector<float> EPSSteeringAngleRatio
-
+            //USS state
+            uint32_t   proximity;//PROXIMITY (16)
+            uint32_t   normal;//NORMAL    (0)
+            
             //GEAR
             uint32_t    gear_p;//GEAR_P
             uint32_t    gear_r;//GEAR_R

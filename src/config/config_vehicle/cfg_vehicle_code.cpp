@@ -275,6 +275,295 @@ namespace motovis
             {
                 m_VehicleConfig.middle_to_rear = StringToNum<float>(val);
             }
+            else if(key == "MIDDLE_TO_REAR_FREESPACE")
+            {
+                m_VehicleConfig.middle_to_rear_freespace = StringToNum<float>(val);
+            }
+             else if(key == "AXIS_DISTANCE")
+            {
+                m_VehicleConfig.axis_distance = StringToNum<float>(val);
+            }
+             else if(key == "FRONT_USS_TO_FRONT_AXLE_DIST")
+            {
+                m_VehicleConfig.front_uss_to_front_axle_dist = StringToNum<float>(val);
+            } else if(key == "SENSORS_LONGITUDINAL_DIST")
+            {
+                m_VehicleConfig.sensors_longitudinal_dist = StringToNum<float>(val);
+            } else if(key == "HALF_VEHICLE_WIDTH")
+            {
+                m_VehicleConfig.half_vehicle_width = StringToNum<float>(val);
+            } else if(key == "WHEEL_SPEED_PULSE_METERS_PER_PULSE")
+            {
+                m_VehicleConfig.wheel_speed_pulse_meters_per_pulse = StringToNum<float>(val);
+            } else if(key == "FL_WHEEL_SPEED_PULSE_METERS_PER_PULSE")
+            {
+                m_VehicleConfig.fl_wheel_speed_pulse_meters_per_pulse = StringToNum<float>(val);
+            } else if(key == "FR_WHEEL_SPEED_PULSE_METERS_PER_PULSE")
+            {
+                m_VehicleConfig.fr_wheel_speed_pulse_meters_per_pulse = StringToNum<float>(val);
+            } else if(key == "RL_WHEEL_SPEED_PULSE_METERS_PER_PULSE")
+            {
+                m_VehicleConfig.rl_wheel_speed_pulse_meters_per_pulse = StringToNum<float>(val);
+            } else if(key == "RR_WHEEL_SPEED_PULSE_METERS_PER_PULSE")
+            {
+                m_VehicleConfig.rr_wheel_speed_pulse_meters_per_pulse = StringToNum<float>(val);
+            } else if(key == "FRONT_WHEEL_SPAN")
+            {
+                m_VehicleConfig.front_wheel_span = StringToNum<float>(val);
+            } else if(key == "REAR_WHEEL_SPAN")
+            {
+                m_VehicleConfig.rear_wheel_span = StringToNum<float>(val);
+            } else if(key == "VEHICLE_LEN")
+            {
+                m_VehicleConfig.vehicle_len = StringToNum<float>(val);
+            } else if(key == "VEHICLE_WID")
+            {
+                m_VehicleConfig.vehicle_wid = StringToNum<float>(val);
+            } else if(key == "FRONT_EDGE2CENTER")
+            {
+                m_VehicleConfig.front_edge2center = StringToNum<float>(val);
+            } else if(key == "REAR_EDGE2CENTER")
+            {
+                m_VehicleConfig.rear_edge2center = StringToNum<float>(val);
+            } else if(key == "SIDE_EDGE2CENTER")
+            {
+                m_VehicleConfig.side_edge2center = StringToNum<float>(val);
+            } else if(key == "WHEEL_BASE")
+            {
+                m_VehicleConfig.wheel_base = StringToNum<float>(val);
+            } else if(key == "CHAMFER_LENGTH")
+            {
+                m_VehicleConfig.chamfer_length = StringToNum<float>(val);
+            } else if(key == "FRONT_CHAMFER_L1")
+            {
+                m_VehicleConfig.front_chamfer_l1 = StringToNum<float>(val);
+            } else if(key == "FRONT_CHAMFER_L2")
+            {
+                m_VehicleConfig.front_chamfer_l2 = StringToNum<float>(val);
+            } else if(key == "REAR_CHAMFER_L1")
+            {
+                m_VehicleConfig.rear_chamfer_l1 = StringToNum<float>(val);
+            } else if(key == "REAR_CHAMFER_L2")
+            {
+                m_VehicleConfig.rear_chamfer_l2 = StringToNum<float>(val);
+            } else if(key == "CHAMFER_ANGLE")
+            {
+                m_VehicleConfig.chamfer_angle = (StringToNum<float>(val))*PI/180;
+            } else if(key == "REAR_VIEW_LENGTH")
+            {
+                m_VehicleConfig.rear_view_length = StringToNum<float>(val);
+            } else if(key == "REAR_VIEW_WIDTH")
+            {
+                m_VehicleConfig.read_view_width = StringToNum<float>(val);
+            } else if(key == "REAR_VIEW_2_FRONT_AXLE")
+            {
+                m_VehicleConfig.rear_view_2_front_axle = StringToNum<float>(val);
+            } else if(key == "SIDE_LURF_CENTER_X")
+            {
+                m_VehicleConfig.side_lurf_center_x = StringToNum<float>(val);
+            } else if(key == "SIDE_LUR_CENTERY")
+            {
+                m_VehicleConfig.side_lur_centery = StringToNum<float>(val);
+            } else if(key == "SIDE_LURR_CENTERX")
+            {
+                m_VehicleConfig.side_lurr_centerx = StringToNum<float>(val);
+            } else if(key == "FURTHEST_SIDE_DISTANCE")
+            {
+                m_VehicleConfig.furthest_side_distance = StringToNum<float>(val);
+            } else if(key == "LeftCameraX")
+            {
+                m_VehicleConfig.leftCamerax = StringToNum<float>(val);
+            } else if(key == "LeftCameraY")
+            {
+                m_VehicleConfig.leftCameraY = StringToNum<float>(val);
+            } else if(key == "RightCameraX")
+            {
+                m_VehicleConfig.rightCameraX = StringToNum<float>(val);
+            } else if(key == "RightCameraY")
+            {
+                m_VehicleConfig.rightCameraY = StringToNum<float>(val);
+            } else if(key == "FrontCameraX")
+            {
+                m_VehicleConfig.frontCameraX = StringToNum<float>(val);
+            } else if(key == "FrontCameraY")
+            {
+                m_VehicleConfig.frontCameraY = StringToNum<float>(val);
+            } else if(key == "RearCameraX")
+            {
+                m_VehicleConfig.rearCameraX = StringToNum<float>(val);
+            } else if(key == "RearCameraY")
+            {
+                m_VehicleConfig.rearCameraY = StringToNum<float>(val);
+            } else if(key == "SENSOR1_X")
+            {
+                m_VehicleConfig.sensor1_x = StringToNum<float>(val);
+            } else if(key == "SENSOR1_Y")
+            {
+                m_VehicleConfig.sensor1_y = StringToNum<float>(val);
+            } else if(key == "SENSOR1_ANGLE")
+            {
+                m_VehicleConfig.sensor1_angle = (StringToNum<float>(val))* PI / 180;
+            } else if(key == "SENSOR2_X")
+            {
+                m_VehicleConfig.sensor2_x = StringToNum<float>(val);
+            } else if(key == "SENSOR2_Y")
+            {
+                m_VehicleConfig.sensor2_y = StringToNum<float>(val);
+            } else if(key == "SENSOR2_ANGLE")
+            {
+                m_VehicleConfig.sensor2_angle = (StringToNum<float>(val))* PI / 180;
+            } else if(key == "SENSOR3_X")
+            {
+                m_VehicleConfig.sensor3_x = StringToNum<float>(val);
+            } else if(key == "SENSOR3_Y")
+            {
+                m_VehicleConfig.sensor3_y = StringToNum<float>(val);
+            } else if(key == "SENSOR3_ANGLE")
+            {
+                m_VehicleConfig.sensor3_angle = (StringToNum<float>(val))* PI / 180;
+            } else if(key == "SENSOR4_X")
+            {
+                m_VehicleConfig.sensor4_x = StringToNum<float>(val);
+            } else if(key == "SENSOR4_Y")
+            {
+                m_VehicleConfig.sensor4_y = StringToNum<float>(val);
+            } else if(key == "SENSOR4_ANGLE")
+            {
+                m_VehicleConfig.sensor4_angle = (StringToNum<float>(val))* PI / 180;
+            } else if(key == "SENSOR5_X")
+            {
+                m_VehicleConfig.sensor5_x = StringToNum<float>(val);
+            } else if(key == "SENSOR5_Y")
+            {
+                m_VehicleConfig.sensor5_y = StringToNum<float>(val);
+            } else if(key == "SENSOR5_ANGLE")
+            {
+                m_VehicleConfig.sensor5_angle = (StringToNum<float>(val))* PI / 180;
+            } else if(key == "SENSOR6_X")
+            {
+                m_VehicleConfig.sensor6_x = StringToNum<float>(val);
+            } else if(key == "SENSOR6_Y")
+            {
+                m_VehicleConfig.sensor6_y = StringToNum<float>(val);
+            } else if(key == "SENSOR6_ANGLE")
+            {
+                m_VehicleConfig.sensor6_angle = (StringToNum<float>(val))* PI / 180;
+            } else if(key == "SENSOR7_X")
+            {
+                m_VehicleConfig.sensor7_x = StringToNum<float>(val);
+            } else if(key == "SENSOR7_Y")
+            {
+                m_VehicleConfig.sensor7_y = StringToNum<float>(val);
+            } else if(key == "SENSOR7_ANGLE")
+            {
+                m_VehicleConfig.sensor7_angle = (StringToNum<float>(val))* PI / 180;
+            }else if(key == "SENSOR8_X")
+            {
+                m_VehicleConfig.sensor8_x = StringToNum<float>(val);
+            }else if(key == "SENSOR8_Y")
+            {
+                m_VehicleConfig.sensor8_y = StringToNum<float>(val);
+            }else if(key == "SENSOR8_ANGLE")
+            {
+                m_VehicleConfig.sensor8_angle = (StringToNum<float>(val))* PI / 180;
+            }else if(key == "SENSOR9_X")
+            {
+                m_VehicleConfig.sensor9_x = StringToNum<float>(val);
+            }else if(key == "SENSOR9_Y")
+            {
+                m_VehicleConfig.sensor9_y = StringToNum<float>(val);
+            }else if(key == "SENSOR9_ANGLE")
+            {
+                m_VehicleConfig.sensor9_angle = (StringToNum<float>(val))* PI / 180;
+            }else if(key == "SENSOR10_X")
+            {
+                m_VehicleConfig.sensor10_x = StringToNum<float>(val);
+            }else if(key == "SENSOR10_Y")
+            {
+                m_VehicleConfig.sensor10_y = StringToNum<float>(val);
+            }else if(key == "SENSOR10_ANGLE")
+            {
+                m_VehicleConfig.sensor10_angle = (StringToNum<float>(val))* PI / 180;
+            }else if(key == "SENSOR11_X")
+            {
+                m_VehicleConfig.sensor11_x = StringToNum<float>(val);
+            }else if(key == "SENSOR11_Y")
+            {
+                m_VehicleConfig.sensor11_y = StringToNum<float>(val);
+            }else if(key == "SENSOR11_ANGLE")
+            {
+                m_VehicleConfig.sensor11_angle = (StringToNum<float>(val))* PI / 180;
+            }else if(key == "COS_SENSOR11_DIS_ANGEL")
+            {
+                m_VehicleConfig.cos_sensor11_dis_angel = StringToNum<float>(val);
+            }else if(key == "SENSOR12_X")
+            {
+                m_VehicleConfig.sensor12_x = StringToNum<float>(val);
+            }else if(key == "SENSOR12_Y")
+            {
+                m_VehicleConfig.sensor12_y = StringToNum<float>(val);
+            }else if(key == "SENSOR12_ANGLE")
+            {
+                m_VehicleConfig.sensor12_angle = (StringToNum<float>(val))* PI / 180;
+            }else if(key == "COS_SENSOR12_DIS_ANGEL")
+            {
+                m_VehicleConfig.cos_sensor12_dis_angel = StringToNum<float>(val);
+            }else if(key == "USS_K")
+            {
+                m_VehicleConfig.uss_k = StringToNum<uint32_t>(val);
+            }else if(key == "USS_K2")
+            {
+                m_VehicleConfig.uss_k2 = StringToNum<float>(val);
+            }else if(key == "SPEED_K")
+            {
+                m_VehicleConfig.speed_k = StringToNum<uint32_t>(val);
+            }else if(key == "PLUS_COUNT")
+            {
+                m_VehicleConfig.plus_count = StringToNum<uint32_t>(val);
+            }else if(key == "MAX_STEERING_ANGLE")
+            {
+                m_VehicleConfig.max_steering_angle = StringToNum<uint32_t>(val);
+            }else if(key == "MAX_STEERING_ANGLE_SPEED")
+            {
+                m_VehicleConfig.max_steering_angle_speed = StringToNum<uint32_t>(val);
+            }else if(key == "MAX_FRONT_AXLE_ANGLE")
+            {
+                m_VehicleConfig.max_front_axle_angle = StringToNum<float>(val);
+            }else if(key == "CAMERA_2_MID")
+            {
+                m_VehicleConfig.camera_2_mid = StringToNum<float>(val);
+            }else if(key == "VERY_DANGOUS_VELOCITY")
+            {
+                m_VehicleConfig.very_dangrous_velocity = StringToNum<float>(val);
+            }else if(key == "DANGOUS_VELOCITY")
+            {
+                m_VehicleConfig.dangrous_velocity = StringToNum<float>(val);
+            }else if(key == "STEERING_WHEEL_ANGLE_ERROR")
+            {
+                m_VehicleConfig.steering_wheel_angle_error = StringToNum<uint32_t>(val);
+            }else if(key == "ADDIDEGREE")
+            {
+                m_VehicleConfig.addIdegree = StringToNum<uint32_t>(val);
+            }else if(key == "PROXIMITY")
+            {
+                m_VehicleConfig.proximity = StringToNum<uint32_t>(val);
+            }else if(key == "NORMAL")
+            {
+                m_VehicleConfig.normal = StringToNum<uint32_t>(val);
+            }else if(key == "GEAR_P")
+            {
+                m_VehicleConfig.gear_p = StringToNum<uint32_t>(val);
+            }else if(key == "GEAR_R")
+            {
+                m_VehicleConfig.gear_r = StringToNum<uint32_t>(val);
+            }else if(key == "GEAR_N")
+            {
+                m_VehicleConfig.gear_n = StringToNum<uint32_t>(val);
+            }else if(key == "GEAR_D")
+            {
+                m_VehicleConfig.gear_d = StringToNum<uint32_t>(val);
+            }
+            //数组行、列
             else if(key == "EPSSteeringAngleRatiosRows")
             {
                 EPSSteeringAngleRatiosRows = StringToNum<uint32_t>(val);
@@ -314,6 +603,7 @@ namespace motovis
             return;
         }       
 
+        //校验失败就用原本的初始化值
         bool CCfgVehicleCode::checkCfg()
         {
             bool ret = true;
