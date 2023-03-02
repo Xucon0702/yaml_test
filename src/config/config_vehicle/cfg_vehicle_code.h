@@ -160,6 +160,8 @@ namespace motovis
             // void setCfgVariable(vector<vector<int16_t> > & vSAMinDis,vector<vector<int16_t> > & vSAMinDis,uint32_t disLsitNum,VehicleConfig mVehicleCfg);
             void getVehicleConfig(VehicleConfig & obj);
             uint32_t getSteeringAngleMinDisLsitNum();
+            uint32_t getEPSSteeringAngleRatiosRows();
+
             void getSteeringAngleMinDis(vector<vector<int16_t> > & vSAMinDis);
             void getEPSSteeringAngleRatio( vector<vector<float> > & vSARatio);
 

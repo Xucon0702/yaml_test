@@ -2,12 +2,8 @@
 #include<iostream>
 #include<cstring>
 #include <cstdlib>
-// #include "yaml.h"
 #include "cfg_function_code.h"
-// #include "cfg_vehicle_code.h"
-// #include "base.h"
-
-#include "readCfg.h"
+#include "base.h"
 
 using namespace std;
 using namespace YAML;
@@ -23,6 +19,7 @@ extern vector<vector<int16_t> > gSAMinDis;
 extern vector<vector<float> > gSARatio;
 extern VehicleConfig gObj;
 extern CCfgVehicleCode  gVehicleYaml;
+extern uint32_t gEPSSteeringAngleRatiosRows;
 uint32_t gDisLsitNum = 0;
 
 static CCfgManagerFunCode gYamlTest;
@@ -72,6 +69,8 @@ int main(int argc, char* argv[])
 
     getCfgInfo(gSAMinDis,gSARatio,gDisLsitNum,gObj);
     showVehCfg(gObj);
+
+    DBGprint("main GEAR_P = %d;0x:%x\n",GEAR_P,&GEAR_P);
 
     return 0;
 }

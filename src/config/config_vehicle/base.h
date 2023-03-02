@@ -1,201 +1,171 @@
 #ifndef BASE_H
 #define BASE_H
 
+#include "readCfg.h"
 
 //公用但不用配置的
 #if 1
-#define PI 								 (3.1415926535897932384626433832795)
+// #define PI 								 (3.1415926535897932384626433832795)
 #endif
 
-#define     GAC_A58
+// #define     GAC_A58
 
 #ifdef  GAC_A58
 
-static uint32_t AHEAD_CTRL_POINT_NUM = 1;                      //暂不用
-//static float   VisionSlotDelay                               (1)
+extern uint32_t AHEAD_CTRL_POINT_NUM ;                      //暂不用
+//extern float   VisionSlotDelay                               (1)
 
-static float WIDTH_HALF             = 0.9435;
-static float MIDDLE_TO_REAR         = 0;
+extern float WIDTH_HALF             ;
+extern float MIDDLE_TO_REAR         ;
 
-static float MIDDLE_TO_REAR_FREESPACE      = 1.349;//车辆中心到后轴距离
-static float AXIS_DISTANCE                 = 2.730;//轴距
-static float FRONT_USS_TO_FRONT_AXLE_DIST  = 0.956;//前超声到前轴距离
-static float SENSORS_LONGITUDINAL_DIST     = 3.28;//超声安装相关
-static float HALF_VEHICLE_WIDTH            = WIDTH_HALF;
+extern float MIDDLE_TO_REAR_FREESPACE      ;//车辆中心到后轴距离
+extern float AXIS_DISTANCE                 ;//轴距
+extern float FRONT_USS_TO_FRONT_AXLE_DIST  ;//前超声到前轴距离
+extern float SENSORS_LONGITUDINAL_DIST     ;//超声安装相关
+extern float HALF_VEHICLE_WIDTH            ;
 
-static float WHEEL_SPEED_PULSE_METERS_PER_PULSE      = 0.0269;//轮脉冲分辨率
-static float FL_WHEEL_SPEED_PULSE_METERS_PER_PULSE   = 0.0269;
-static float FR_WHEEL_SPEED_PULSE_METERS_PER_PULSE   = 0.0269;
-static float RL_WHEEL_SPEED_PULSE_METERS_PER_PULSE   = 0.0269;
-static float RR_WHEEL_SPEED_PULSE_METERS_PER_PULSE   = 0.0269;
+extern float WHEEL_SPEED_PULSE_METERS_PER_PULSE      ;//轮脉冲分辨率
+extern float FL_WHEEL_SPEED_PULSE_METERS_PER_PULSE   ;
+extern float FR_WHEEL_SPEED_PULSE_METERS_PER_PULSE   ;
+extern float RL_WHEEL_SPEED_PULSE_METERS_PER_PULSE   ;
+extern float RR_WHEEL_SPEED_PULSE_METERS_PER_PULSE   ;
 
-static float FRONT_WHEEL_SPAN = 1.617;                  //前轮距
-static float REAR_WHEEL_SPAN  = 1.610;                  //后轮距
+extern float FRONT_WHEEL_SPAN ;                  //前轮距
+extern float REAR_WHEEL_SPAN  ;                  //后轮距
 
 //1.GAC_A58车车身参数,单位/m
-static float VEHICLE_LEN			= 4.650;            //车长
-static float VEHICLE_WID			= 1.887;            //车宽
-static float FRONT_EDGE2CENTER		= 3.674;            //前沿到后轴距离
-static float REAR_EDGE2CENTER		= 0.976;            //后沿到后轴距离
-static float SIDE_EDGE2CENTER		= VEHICLE_WID / 2;   //侧边沿到中心距离
-static float WHEEL_BASE             = AXIS_DISTANCE;       //轴距
+extern float VEHICLE_LEN			;            //车长
+extern float VEHICLE_WID			;            //车宽
+extern float FRONT_EDGE2CENTER		;            //前沿到后轴距离
+extern float REAR_EDGE2CENTER		;            //后沿到后轴距离
+extern float SIDE_EDGE2CENTER		;   //侧边沿到中心距离
+extern float WHEEL_BASE             ;       //轴距
 //jiao dian zxy....目前用的L1/L2
-static float CHAMFER_LENGTH         = 0.4;                       
-static float FRONT_CHAMFER_L1       = 0.;                       //前保到倒角距离
-static float FRONT_CHAMFER_L2       = 0.;
-static float REAR_CHAMFER_L1        = 0.2;
-static float REAR_CHAMFER_L2        = 0.2;
-static float CHAMFER_ANGLE          = 45*PI/180;
+extern float CHAMFER_LENGTH         ;                       
+extern float FRONT_CHAMFER_L1       ;                       //前保到倒角距离
+extern float FRONT_CHAMFER_L2       ;
+extern float REAR_CHAMFER_L1        ;
+extern float REAR_CHAMFER_L2        ;
+extern float CHAMFER_ANGLE          ;
 /*后视镜长度*/
-static float REAR_VIEW_LENGTH       = 0.2;
-static float REAR_VIEW_WIDTH        = 0.25;
-static float REAR_VIEW_2_FRONT_AXLE = 2.16;             //后视镜到后轴距离
+extern float REAR_VIEW_LENGTH       ;
+extern float REAR_VIEW_WIDTH        ;
+extern float REAR_VIEW_2_FRONT_AXLE ;             //后视镜到后轴距离
 //2.超声安装参数
-static float SIDE_LURF_CENTER_X		= 3.259;			//前侧边超声到车辆后轴中心点的X距离
-static float SIDE_LUR_CENTERY		= 0.943;			//两侧边超声到车辆后轴中心点的Y距离
-static float SIDE_LURR_CENTERX	    = 0.569;            //后侧边超声到车辆后轴中心点的X距离
-//static float SENSORS_LONGITUDINAL_DIST		(3.28)			//????????????????????????????
-static float FURTHEST_SIDE_DISTANCE	= 999;			//如果探测的距离是0，就赋此值
+extern float SIDE_LURF_CENTER_X		;			//前侧边超声到车辆后轴中心点的X距离
+extern float SIDE_LUR_CENTERY		;			//两侧边超声到车辆后轴中心点的Y距离
+extern float SIDE_LURR_CENTERX	    ;            //后侧边超声到车辆后轴中心点的X距离
+//extern float SENSORS_LONGITUDINAL_DIST		(3.28)			//????????????????????????????
+extern float FURTHEST_SIDE_DISTANCE	;			//如果探测的距离是0，就赋此值
 
 
-static float LeftCameraX            = REAR_VIEW_2_FRONT_AXLE - 0.16;
-static float LeftCameraY            = VEHICLE_WID * 0.5 + 0.05;
-static float RightCameraX           = LeftCameraX;
-static float RightCameraY           = -LeftCameraY;
-static float FrontCameraX           = FRONT_EDGE2CENTER;
-static float FrontCameraY           = 0.;
-static float RearCameraX            = -REAR_EDGE2CENTER;
-static float RearCameraY            = 0.;
+extern float LeftCameraX            ;
+extern float LeftCameraY            ;
+extern float RightCameraX           ;
+extern float RightCameraY           ;
+extern float FrontCameraX           ;
+extern float FrontCameraY           ;
+extern float RearCameraX            ;
+extern float RearCameraY            ;
 
 /*yrm3,实际车辆的超声安装位置*/
-static float SENSOR1_X              = 3.564;
-static float SENSOR1_Y              = 0.667;
-static float SENSOR1_ANGLE          = 42 * PI / 180;//132
+extern float SENSOR1_X              ;
+extern float SENSOR1_Y              ;
+extern float SENSOR1_ANGLE          ;//132
 
-static float SENSOR2_X              = 3.631;
-static float SENSOR2_Y              = 0.345;
-static float SENSOR2_ANGLE          = 7 * PI / 180;//96
+extern float SENSOR2_X              ;
+extern float SENSOR2_Y              ;
+extern float SENSOR2_ANGLE          ;//96
 
-static float SENSOR3_X              = SENSOR2_X ;
-static float SENSOR3_Y              = -SENSOR2_Y ;
-static float SENSOR3_ANGLE          = -SENSOR2_ANGLE ;
+extern float SENSOR3_X              ;
+extern float SENSOR3_Y              ;
+extern float SENSOR3_ANGLE          ;
 
-static float SENSOR4_X              = SENSOR1_X ;
-static float SENSOR4_Y              = -SENSOR1_Y ;
-static float SENSOR4_ANGLE          = -SENSOR1_ANGLE ;
+extern float SENSOR4_X              ;
+extern float SENSOR4_Y              ;
+extern float SENSOR4_ANGLE          ;
 
-static float SENSOR5_X              = -0.902;
-static float SENSOR5_Y              = 0.603;
-static float SENSOR5_ANGLE          = 149 * PI / 180;//301
+extern float SENSOR5_X              ;
+extern float SENSOR5_Y              ;
+extern float SENSOR5_ANGLE          ;//301
 
-static float SENSOR6_X              = -0.965;
-static float SENSOR6_Y              = 0.249;
-static float SENSOR6_ANGLE          = 173 * PI / 180;
+extern float SENSOR6_X              ;
+extern float SENSOR6_Y              ;
+extern float SENSOR6_ANGLE          ;
 
-static float SENSOR7_X              = SENSOR6_X ;
-static float SENSOR7_Y              = -SENSOR6_Y ;
-static float SENSOR7_ANGLE          = -SENSOR6_ANGLE ;
+extern float SENSOR7_X              ;
+extern float SENSOR7_Y              ;
+extern float SENSOR7_ANGLE          ;
 
-static float SENSOR8_X              = SENSOR5_X ;
-static float SENSOR8_Y              = -SENSOR5_Y ;
-static float SENSOR8_ANGLE          = -SENSOR5_ANGLE ;
+extern float SENSOR8_X              ;
+extern float SENSOR8_Y              ;
+extern float SENSOR8_ANGLE          ;
 
-static float SENSOR9_X              = SIDE_LURF_CENTER_X ;
-static float SENSOR9_Y              = SIDE_EDGE2CENTER ;
-static float SENSOR9_ANGLE          = 82 * PI / 180;
+extern float SENSOR9_X              ;
+extern float SENSOR9_Y              ;
+extern float SENSOR9_ANGLE          ;
 
-static float SENSOR10_X             = SENSOR9_X ;
-static float SENSOR10_Y             = -SENSOR9_Y ;
-static float SENSOR10_ANGLE         = -SENSOR9_ANGLE ;
+extern float SENSOR10_X             ;
+extern float SENSOR10_Y             ;
+extern float SENSOR10_ANGLE         ;
 
-static float SENSOR11_X             = -SIDE_LURR_CENTERX;
-static float SENSOR11_Y             = SIDE_EDGE2CENTER;
-static float SENSOR11_ANGLE         = 92 * PI / 180;// *pi/3 rad, 120 degree
-static float COS_SENSOR11_DIS_ANGEL = 1.0;
+extern float SENSOR11_X             ;
+extern float SENSOR11_Y             ;
+extern float SENSOR11_ANGLE         ;// *pi/3 rad, 120 degree
+extern float COS_SENSOR11_DIS_ANGEL ;
 
-static float SENSOR12_X             = SENSOR11_X;
-static float SENSOR12_Y             = -SENSOR11_Y;
-static float SENSOR12_ANGLE         = -SENSOR11_ANGLE;
-static float COS_SENSOR12_DIS_ANGEL = 1.0;
+extern float SENSOR12_X             ;
+extern float SENSOR12_Y             ;
+extern float SENSOR12_ANGLE         ;
+extern float COS_SENSOR12_DIS_ANGEL ;
 
-static uint32_t USS_K               = 58;
-static float USS_K2                 = 7.752;
-static uint32_t SPEED_K             = 1;
-static uint32_t PLUS_COUNT          = 4096;
+extern uint32_t USS_K               ;
+extern float USS_K2                 ;
+extern uint32_t SPEED_K             ;
+extern uint32_t PLUS_COUNT          ;
 
 
 //3.规划参数
 // 最大规划转向角(°)
-static uint32_t MAX_STEERING_ANGLE        = 456;                    //最大方向盘转角
-static uint32_t MAX_STEERING_ANGLE_SPEED  = 400;                   //最大方向盘角速
-static float MAX_FRONT_AXLE_ANGLE         = 0.6;                           //最大前轴转角
+extern uint32_t MAX_STEERING_ANGLE        ;                    //最大方向盘转角
+extern uint32_t MAX_STEERING_ANGLE_SPEED  ;                   //最大方向盘角速
+extern float MAX_FRONT_AXLE_ANGLE         ;                   //最大前轴转角
 //4.环视参数
-static float CAMERA_2_MID                 = 0.58;                   //暂未用
+extern float CAMERA_2_MID                 ;                   //暂未用
 
 //5.速度默认-避障相关
-static float VERY_DANGOUS_VELOCITY        = 0.2;
-static float DANGOUS_VELOCITY             = 0.3;
+extern float VERY_DANGOUS_VELOCITY        ;
+extern float DANGOUS_VELOCITY             ;
 
 //6.转向角误差
-static float STEERING_WHEEL_ANGLE_ERROR   = 10;          //目标方向盘转角和实际方向盘转角最大允许差值
+extern float STEERING_WHEEL_ANGLE_ERROR   ;          //目标方向盘转角和实际方向盘转角最大允许差值
 
-static uint32_t ADDIDEGREE                = 0;              //暂未用
+extern uint32_t ADDIDEGREE                ;              //暂未用
 
 //7.USS state
-static uint32_t PROXIMITY = 16;
-static uint32_t NORMAL    = 0;
+extern uint32_t PROXIMITY ;
+extern uint32_t NORMAL    ;
 
 
 //rows(11);cols(5);vector<float>
-static float EPSSteeringAngleRatio[11][5]=
-{
-    //SteeringAngle LeftForward  LeftBack RightForward RightRear
-    {170*PI/180, 0.182713, 0.186183, 0.193731, 0.195271},
-    {200*PI/180, 0.213624, 0.210972, 0.225991, 0.225291},
-    {230*PI/180, 0.253340, 0.246417, 0.264447, 0.257712},
-    {260*PI/180, 0.281727, 0.283221, 0.295076, 0.292958},
-    {290*PI/180, 0.316585, 0.312152, 0.329033, 0.325144},
-    {320*PI/180, 0.353413, 0.348024, 0.334337, 0.362713},
-    {350*PI/180, 0.368205, 0.380656, 0.402151, 0.392548},
-    {380*PI/180, 0.423274, 0.415827, 0.438791, 0.427377},
-    {410*PI/180, 0.466571, 0.456298, 0.476865, 0.467039},
-    {440*PI/180, 0.504171, 0.483403, 0.517839, 0.498223},
-    {470*PI/180, 0.527227, 0.513124, 0.541730, 0.524689}
-};
+extern float EPSSteeringAngleRatio[11][5];
 
-static int EPS_STEERING_ANGLE_RATIO_SEGMENT=11;
+extern int EPS_STEERING_ANGLE_RATIO_SEGMENT;
 
 
 //9.避障参数
-#define LIST_NUM    (3)
-//vetor<vector<short>>
-static const short SteeringAngleMinDis[LIST_NUM][25]=
-{
-    //SteeringAngle sUss1 sUss2 sUss3 sUss4 sUss5 sUss6 sUss7 lUss8 lUss9 lUss10 lUss11
 
-    // Use angle should mulitple 10
-    // -1 means disable
-    {0,
-     35, 45, 45, 35,     -1, -1, -1, -1,     -1, -1, -1, -1,//forward
-     -1, -1, -1, -1,     30, 30, 30, 30,     -1, -1, -1, -1,//backward
-    }, //0
-    {250,
-     45, 45, 45, 45,     -1, -1, -1, -1,     35, -1, -1, -1,//forward  默认左转
-     -1, -1, -1, -1,     35, 30, 30, 35,    -1, 25, 30, 30,//backward
-    }, //250
-    {400,
-     45, 45, 45, 45,     -1, -1, -1, -1,     35, -1, -1, -1,//forward x,x,x,x,  x,x,x,x,  25, -1, -1, -1,超声安装位置调整之前
-     -1, -1, -1, -1,    35, 35, 35, 35,     -1, 25, 30, 30,//backward
-    }, //400
-};
+//vetor<vector<short>>
+extern const short SteeringAngleMinDis[LIST_NUM][25];
 
 
 //10.GEAR
 
-static uint32_t GEAR_P = 1;
-static uint32_t GEAR_R = 2;
-static uint32_t GEAR_N = 3;
-static uint32_t GEAR_D = 4;
+// extern uint32_t GEAR_P = 1;
+extern uint32_t GEAR_P ;
+extern uint32_t GEAR_R ;
+extern uint32_t GEAR_N ;
+extern uint32_t GEAR_D ;
 #endif
 
 #endif

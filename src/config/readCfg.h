@@ -1,8 +1,20 @@
 #ifndef READCFG_H_
 #define READCFG_H_
 
-#include "base.h"
 #include "cfg_vehicle_code.h"
+
+
+#define GAC_A58
+
+#ifdef  GAC_A58
+#define PI 								 (3.1415926535897932384626433832795)
+
+#define EPSSARatioClos (5)		//对应EPSSteeringAngleRatio的数组
+
+#define LIST_NUM    (3)
+#define SAMinDisClos	(25)	//对应SteeringAngleMinDis的数组
+
+#endif
 
 
 #define toStr(X) #X     //toStr(X) --> "X" ; substr:功能是复制子字符串，从指定位置开始,并具有指定的长度:如下、从第0个字符开始的实际字符长度
@@ -23,13 +35,14 @@
 /*添加class的头文件后,using 不写的话用时就得motovis::yamlVehicle::VehicleConfig*/
 
 
-
 using namespace motovis;
 using namespace yamlVehicle;
 
 void getCfgInfo(vector<vector<int16_t> > & vSAMinDis,vector<vector<float> > & vSARatio,uint32_t & disLsitNum,VehicleConfig &mVehicleCfg);
 void showVehCfg(VehicleConfig tS);
-
+void updataVehParam();
+// //test
+uint32_t getGEAR_P();
 
 
 

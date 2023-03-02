@@ -635,10 +635,16 @@ namespace motovis
         {
             return SteeringAngleMinDisLsitNum;
         }
+        
+        uint32_t CCfgVehicleCode::getEPSSteeringAngleRatiosRows()
+        {
+            return EPSSteeringAngleRatiosRows;
+        }
 
         void CCfgVehicleCode::getSteeringAngleMinDis(vector<vector<int16_t> > & vSAMinDis)
         {
             vSAMinDis.assign(SteeringAngleMinDis.begin(),SteeringAngleMinDis.end());
+            
             std::cout <<"vSAMinDis:start:vSAMinDis.size()="<<vSAMinDis.size()<<std::endl;
             for (int i = 0; i < vSAMinDis.size(); i++) {       // 行数
             std::cout<<"vSAMinDis:i="<<i<<";vSAMinDis[i].size()="<<vSAMinDis[i].size()<<std::endl;
