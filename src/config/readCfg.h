@@ -38,7 +38,7 @@
 using namespace motovis;
 using namespace yamlVehicle;
 
-void getCfgInfo(vector<vector<int16_t> > & vSAMinDis,vector<vector<float> > & vSARatio,uint32_t & disLsitNum,VehicleConfig &mVehicleCfg);
+void getCfgInfo(vector<vector<int16_t> > & vSAMinDis,vector<vector<float> > & vSARatio,VehicleConfig &mVehicleCfg);
 void showVehCfg(VehicleConfig tS);
 void updataVehParam();
 // //test

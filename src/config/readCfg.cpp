@@ -11,7 +11,6 @@ vector<vector<int16_t> > gSAMinDis;
 vector<vector<float> > gSARatio;
 VehicleConfig gObj;
 CCfgVehicleCode  gVehicleYaml;
-uint32_t gEPSSteeringAngleRatiosRows = 0;
 
 //一个文件中的变量到处被调用的写法:(cpp中定义,.h中引用)
 #ifdef  GAC_A58
@@ -356,8 +355,10 @@ void updataVehParam(vector<vector<int16_t> > & vSAMinDis,vector<vector<float> > 
 }
 
 
-void getCfgInfo(vector<vector<int16_t> > & vSAMinDis,vector<vector<float> > & vSARatio,uint32_t & RatiosRows,VehicleConfig &mVehicleCfg)
+void getCfgInfo(vector<vector<int16_t> > & vSAMinDis,vector<vector<float> > & vSARatio,VehicleConfig &mVehicleCfg)
 {
+    uint32_t RatiosRows = 0;
+
      //车身参数配置获取:
     gVehicleYaml.showVehicleConfig();
     gVehicleYaml.Init();
@@ -367,21 +368,10 @@ void getCfgInfo(vector<vector<int16_t> > & vSAMinDis,vector<vector<float> > & vS
     gVehicleYaml.getEPSSteeringAngleRatio(vSARatio);
     gVehicleYaml.getSteeringAngleMinDis(vSAMinDis);
     RatiosRows = gVehicleYaml.getEPSSteeringAngleRatiosRows();
-    // disLsitNum = gVehicleYaml.getSteeringAngleMinDisLsitNum();
 
     //设置变量:
     updataVehParam(vSAMinDis,vSARatio,RatiosRows,mVehicleCfg);
     
-
-    DBGprint("111 AHEAD_CTRL_POINT_NUM = %d\n",AHEAD_CTRL_POINT_NUM);
-
-    getGEAR_P();
-
-    GEAR_P = 213123;
-    DBGprint("222 GEAR_P = %d\n",GEAR_P);
-
-    getGEAR_P();
-
     return;
 }
 
